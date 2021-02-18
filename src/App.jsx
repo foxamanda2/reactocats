@@ -1,12 +1,24 @@
 import React, { Component } from 'react'
-
 import { OctocatArticle } from './components/OctocatArticle'
+import articles from './articles'
 
 export class App extends Component {
   render() {
+    const octocatsFromData = articles.map(article => (
+      <OctocatArticle
+        key={article.id}
+        name={article.name}
+        number={article.number}
+        image={article.image}
+        imagelink={article.imagelink}
+        creatorlink={article.creatorlink}
+        creatorimage={article.creatorimage}
+        creatorname={article.creatorname}
+      />
+    ))
     return (
       <body>
-        <header>
+        {/* <header>
           <nav class="firstmenu">
             <ul>
               <li>
@@ -52,9 +64,10 @@ export class App extends Component {
               </li>
             </ul>
           </nav>
-        </header>
+        </header> */}
         <main>
-          <OctocatArticle
+          {octocatsFromData}
+          {/* <OctocatArticle
             name="IronCat"
             number="#24:"
             image="https://octodex.github.com/images/ironcat.jpg"
@@ -178,14 +191,14 @@ export class App extends Component {
             imagelink="https://octodex.github.com/homercat/"
             creatorlink="https://github.com/nickh"
             creatorimage="https://github.com/nickh.png"
-            creatorname="nickh"
-          />
+            creatorname="nickh" 
+          />*/}
         </main>
-        <footer>
+        {/* <footer>
           <div>
             <p>© 2013 – 2020 GitHub, Inc. All rights reserved.</p>
           </div>
-        </footer>
+        </footer> */}
       </body>
     )
   }
